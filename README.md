@@ -1,5 +1,8 @@
 # LTR-01
 
+Code for a home-built autonomous flight controller.
+This code is mostly for personal use due to custom hardware, but if you want i have no problem with the code being used.
+
 ## Dependencies
 
 ### Software
@@ -9,8 +12,9 @@
 
 ### Hardware
 
-- Requires a Raspberry Pi to run
+- Needs to be built on a Raspberry Pi to run correctly
 - Requires the exact circuit configuration I have (I can upload diagrams later)
+- The plane itself
 
 ## Instructions
 
