@@ -4,7 +4,7 @@
 
 ### Software
 
-- pigpio library
+- [pigpio](http://abyz.me.uk/rpi/pigpio/)
 - gcc
 
 ### Hardware
