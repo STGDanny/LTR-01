@@ -2,13 +2,14 @@
 
 int main(void) {
 	//Initialize the Littleroot object
-	Littleroot ltr_01 = {NULL};
+	Littleroot *ltr = {NULL};
 
 	//Initialize the GPIO library
-	if (init(&ltr_01) == false) {
+	if (init(ltr) == false) {
 		return GENERAL_ERROR_CODE;
 	}
 
+	turnRight(ltr);
 	printf("Everything worked!\n");
 
 	//Kill the library and exit the program:

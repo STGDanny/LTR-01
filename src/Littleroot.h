@@ -29,3 +29,4 @@ typedef struct Littleroot {
 
 //Prototypes
 int init(Littleroot *);
+void turnRight(Littleroot *);
