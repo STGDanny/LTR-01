@@ -11,7 +11,7 @@
 
 int main(void) {
 	//Initialize the Littleroot object
-	Littleroot ltr = {NULL};
+	Littleroot ltr = {0};
 
 	//Initialize the GPIO library
 	//IF init returns false:
