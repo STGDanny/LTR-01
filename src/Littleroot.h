@@ -1,13 +1,18 @@
 #include <pigpio.h>
+#include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 
 //Constants
+#define LEFT_AILERON_PIN 6
+#define RIGHT_AILERON_PIN 12
+#define MOTOR_PIN 21
+
+#define GENERAL_ERROR_CODE -1
 
 //Data types
 typedef struct Motor {
 	uint8_t pinNumber;
-
 } Motor;
 
 typedef struct Aileron {
@@ -23,3 +28,4 @@ typedef struct Littleroot {
 } Littleroot;
 
 //Prototypes
+int init(Littleroot *);
