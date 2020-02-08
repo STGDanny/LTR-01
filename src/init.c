@@ -7,7 +7,7 @@
 *		The function(s) in this file set up and initialise pins on a raspberry pi for use with the project
 */
 
-#include "Littleroot.h"
+#include "littleroot.h"
 
 //Local prototypes
 void setPins(Littleroot *);

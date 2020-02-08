@@ -7,7 +7,7 @@
 *		The function(s) in this file act as a testing platform for the project including main()
 */
 
-#include "Littleroot.h"
+#include "littleroot.h"
 
 int main(void) {
 	//Initialize the Littleroot object

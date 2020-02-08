@@ -8,7 +8,7 @@
 *       These can include moving motors or flashing LEDs etc.
 */
 
-#include "Littleroot.h"
+#include "littleroot.h"
 
 /*
 *	FUNCTION			: turnRight
