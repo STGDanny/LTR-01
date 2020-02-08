@@ -34,7 +34,7 @@ int init(Littleroot *ltr) {
 }
 
 void setPins(Littleroot *ltr) {
-	ltr->leftAileron->pinNumber = LEFT_AILERON_PIN;
-	ltr->rightAileron->pinNumber = RIGHT_AILERON_PIN;
-	ltr->mainMotor->pinNumber = MOTOR_PIN;
+	ltr->leftAileron.pinNumber = LEFT_AILERON_PIN;
+	ltr->rightAileron.pinNumber = RIGHT_AILERON_PIN;
+	ltr->mainMotor.pinNumber = MOTOR_PIN;
 }
