@@ -25,5 +25,6 @@ int main(void) {
 
 	//Kill the library and exit the program:
 	gpioTerminate();
+	printf("Exiting Gracefully!\n");
 	return 0;
 }
