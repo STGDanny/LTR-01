@@ -1,1 +1,1 @@
-gcc -Wall -pthread -o LTR_01 ../src/*.c ../src/*.h -lpigpio -lrt
+gcc -Wall -pthread -o LTR_01 ../src/*.c ../src/*.h ../src/routines/*.c -lpigpio -lrt
