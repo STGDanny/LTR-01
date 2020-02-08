@@ -7,7 +7,7 @@
 *		The function(s) in this file define over-arching routines to be called during flight 
 */
 
-#include "littleroot.h"
+#include "../littleroot.h"
 
 /*
 *	FUNCTION			: cycleMotors
