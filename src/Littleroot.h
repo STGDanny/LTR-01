@@ -29,5 +29,8 @@ typedef struct Littleroot {
 
 //Prototypes
 int init(Littleroot *);
+
+//Routines
 void turnRight(Littleroot *);
 void turnLeft(Littleroot *);
+void centre(Littleroot *);

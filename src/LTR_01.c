@@ -9,8 +9,10 @@ int main(void) {
 		return GENERAL_ERROR_CODE;
 	}
 
+	centre(&ltr);
 	turnRight(&ltr);
-	printf("Everything worked!\n");
+	turnLeft(&ltr);
+	centre(&ltr);
 
 	//Kill the library and exit the program:
 	gpioTerminate();
