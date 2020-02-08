@@ -9,10 +9,8 @@ int main(void) {
 		return GENERAL_ERROR_CODE;
 	}
 
-	centre(&ltr);
-	turnRight(&ltr);
-	turnLeft(&ltr);
-	centre(&ltr);
+	//Test all motors
+	cycleMotors(&ltr);
 
 	//Kill the library and exit the program:
 	gpioTerminate();

@@ -30,7 +30,10 @@ typedef struct Littleroot {
 //Prototypes
 int init(Littleroot *);
 
-//Routines
+//Sub-Routines
 void turnRight(Littleroot *);
 void turnLeft(Littleroot *);
 void centre(Littleroot *);
+
+//Routines
+void cycleMotors(Littleroot *);
