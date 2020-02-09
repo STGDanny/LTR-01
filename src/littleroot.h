@@ -48,6 +48,8 @@ int init(Littleroot *);
 void turnRight(Littleroot *);
 void turnLeft(Littleroot *);
 void centre(Littleroot *);
+void goUp(Littleroot *);
+void goDown(Littleroot *);
 
 //Routines
 void cycleMotors(Littleroot *);

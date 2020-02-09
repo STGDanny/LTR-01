@@ -24,8 +24,8 @@
 */
 void turnRight(Littleroot *ltr) {
 	//Send commands to the servos
-	gpioServo(ltr->rightAileron.pinNumber, SERVO_MAX_CLOCKWISE);
-	gpioServo(ltr->leftAileron.pinNumber, SERVO_MAX_COUNTER_CLOCKWISE);
+	gpioServo(ltr->rightAileron.pinNumber, SERVO_MAX_COUNTER_CLOCKWISE);
+	gpioServo(ltr->leftAileron.pinNumber, SERVO_MAX_CLOCKWISE);
 
 	//Wait to allow the servos to reach the desired destination
 	time_sleep(1);
@@ -45,8 +45,8 @@ void turnRight(Littleroot *ltr) {
 */
 void turnLeft(Littleroot *ltr) {
 	//Send commands to the servos
-	gpioServo(ltr->rightAileron.pinNumber, SERVO_MAX_COUNTER_CLOCKWISE);
-	gpioServo(ltr->leftAileron.pinNumber, SERVO_MAX_CLOCKWISE);
+	gpioServo(ltr->rightAileron.pinNumber, SERVO_MAX_CLOCKWISE);
+	gpioServo(ltr->leftAileron.pinNumber, SERVO_MAX_COUNTER_CLOCKWISE);
 
 	//Wait to allow the servos to reach the desired destination
 	time_sleep(1);
@@ -70,4 +70,44 @@ void centre(Littleroot *ltr) {
 
 	//Wait to allow the servos to reach the desired destination
 	time_sleep(0.25);
+}
+
+/*
+*	FUNCTION			: goUp
+*	DESCRIPTION			:
+*		This function takes a Littleroot object and moves it's ailerons to increase it's height
+*
+*	PARAMETERS			:
+*		Littleroot* ltr : Object to perform action upon
+*
+*	RETURNS				:
+*		void 			: void
+*/
+void goUp(Littleroot *ltr) {
+	//Send commands to the servos
+	gpioServo(ltr->rightAileron.pinNumber, SERVO_MAX_CLOCKWISE);
+	gpioServo(ltr->leftAileron.pinNumber, SERVO_MAX_CLOCKWISE);
+
+	//Wait to allow the servos to reach the desired destination
+	time_sleep(1);
+}
+
+/*
+*	FUNCTION			: goDown
+*	DESCRIPTION			:
+*		This function takes a Littleroot object and moves it's ailerons to decrease it's height
+*
+*	PARAMETERS			:
+*		Littleroot* ltr : Object to perform action upon
+*
+*	RETURNS				:
+*		void 			: void
+*/
+void goDown(Littleroot *ltr) {
+	//Send commands to the servos
+	gpioServo(ltr->rightAileron.pinNumber, SERVO_MAX_COUNTER_CLOCKWISE);
+	gpioServo(ltr->leftAileron.pinNumber, SERVO_MAX_COUNTER_CLOCKWISE);
+
+	//Wait to allow the servos to reach the desired destination
+	time_sleep(1);
 }
