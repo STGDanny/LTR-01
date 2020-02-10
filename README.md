@@ -9,6 +9,8 @@ This code is mostly for personal use due to custom hardware, but if you want I h
 
 - [pigpio](http://abyz.me.uk/rpi/pigpio/)
 - gcc
+  - Required to use the included build.sh
+  - Can be substituted if you compile from scratch
 
 ### Hardware
 
@@ -18,6 +20,8 @@ This code is mostly for personal use due to custom hardware, but if you want I h
 
 ## Instructions
 
+- Change config.txt to match your circuitry
+  - The included config matches my set-up, your mileage may vary
 - If you have the necessary hardware
   - Assemble the circuit and plane correctly
   - Get to an open space
