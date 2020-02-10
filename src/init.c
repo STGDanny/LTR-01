@@ -97,6 +97,7 @@ int8_t setPins(Littleroot* ltr) {
 		} else if (strcmp(key, "MOTOR_AILERON_PIN") == 0) {
 			ltr->mainMotor.pinNumber = value;
 		}
+		free(key);
 	}
 	//Close the file and return true
 	fclose(configFile);
