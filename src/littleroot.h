@@ -42,14 +42,14 @@ typedef struct Littleroot {
 } Littleroot;
 
 //Shared Prototypes
-int init(Littleroot *);
+int init(Littleroot*);
 
 //Sub-Routines
-void turnRight(Littleroot *);
-void turnLeft(Littleroot *);
-void centre(Littleroot *);
-void goUp(Littleroot *);
-void goDown(Littleroot *);
+void turnRight(Littleroot*);
+void turnLeft(Littleroot*);
+void centre(Littleroot*);
+void goUp(Littleroot*);
+void goDown(Littleroot*);
 
 //Routines
-void cycleMotors(Littleroot *);
+void cycleMotors(Littleroot*);

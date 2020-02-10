@@ -10,7 +10,7 @@
 #include "littleroot.h"
 
 //Local prototypes
-void setPins(Littleroot *);
+void setPins(Littleroot*);
 
 /*
 *	FUNCTION			: init
@@ -23,7 +23,7 @@ void setPins(Littleroot *);
 *	RETURNS				:
 *		int 			: Integer value representing a status code
 */
-int init(Littleroot *ltr) {
+int init(Littleroot* ltr) {
 	//Initialize the GPIO library
 	if (gpioInitialise() < 0) {
 		printf("Failure at gpioInitialise()!");
@@ -64,7 +64,7 @@ int init(Littleroot *ltr) {
 *	RETURNS				:
 *		void 			: void
 */
-void setPins(Littleroot *ltr) {
+void setPins(Littleroot* ltr) {
 	ltr->leftAileron.pinNumber = LEFT_AILERON_PIN;
 	ltr->rightAileron.pinNumber = RIGHT_AILERON_PIN;
 	ltr->mainMotor.pinNumber = MOTOR_PIN;

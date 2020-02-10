@@ -21,7 +21,7 @@
 *	RETURNS				:
 *		void 			: void
 */
-void cycleMotors(Littleroot *ltr) {
+void cycleMotors(Littleroot* ltr) {
 	centre(ltr);
 	turnRight(ltr);
 	turnLeft(ltr);
