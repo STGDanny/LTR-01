@@ -37,17 +37,17 @@ int8_t init(Littleroot* ltr) {
 
 	//Set the pin modes
 	if (gpioSetMode(ltr->leftAileron.pinNumber, PI_OUTPUT) != 0) {
-		printf("Error at pin %d\n", LEFT_AILERON_PIN);
+		printf("Error at pin %d\n", ltr->leftAileron.pinNumber);
 		return false;
 	}
 
 	if (gpioSetMode(ltr->rightAileron.pinNumber, PI_OUTPUT) != 0) {
-		printf("Error at pin %d\n", RIGHT_AILERON_PIN);
+		printf("Error at pin %d\n", ltr->rightAileron.pinNumber);
 		return false;
 	}
 
 	if (gpioSetMode(ltr->mainMotor.pinNumber, PI_OUTPUT) != 0) {
-		printf("Error at pin %d\n", MOTOR_PIN);
+		printf("Error at pin %d\n", ltr->mainMotor.pinNumber);
 		return false;
 	}
 
