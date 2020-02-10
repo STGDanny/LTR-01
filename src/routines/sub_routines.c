@@ -53,26 +53,6 @@ void turnLeft(Littleroot *ltr) {
 }
 
 /*
-*	FUNCTION			: centre
-*	DESCRIPTION			:
-*		This function takes a Littleroot object and moves it's ailerons to flatten the plane
-*
-*	PARAMETERS			:
-*		Littleroot* ltr : Object to perform action upon
-*
-*	RETURNS				:
-*		void 			: void
-*/
-void centre(Littleroot *ltr) {
-	//Send commands to the servos
-	gpioServo(ltr->rightAileron.pinNumber, SERVO_MIDDLE);
-	gpioServo(ltr->leftAileron.pinNumber, SERVO_MIDDLE);
-
-	//Wait to allow the servos to reach the desired destination
-	time_sleep(0.25);
-}
-
-/*
 *	FUNCTION			: goUp
 *	DESCRIPTION			:
 *		This function takes a Littleroot object and moves it's ailerons to increase it's height
@@ -110,4 +90,24 @@ void goDown(Littleroot *ltr) {
 
 	//Wait to allow the servos to reach the desired destination
 	time_sleep(1);
+}
+
+/*
+*	FUNCTION			: centre
+*	DESCRIPTION			:
+*		This function takes a Littleroot object and moves it's ailerons to flatten the plane
+*
+*	PARAMETERS			:
+*		Littleroot* ltr : Object to perform action upon
+*
+*	RETURNS				:
+*		void 			: void
+*/
+void centre(Littleroot *ltr) {
+	//Send commands to the servos
+	gpioServo(ltr->rightAileron.pinNumber, SERVO_MIDDLE);
+	gpioServo(ltr->leftAileron.pinNumber, SERVO_MIDDLE);
+
+	//Wait to allow the servos to reach the desired destination
+	time_sleep(0.25);
 }
