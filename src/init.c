@@ -31,7 +31,9 @@ int8_t init(Littleroot* ltr) {
 	}
 
 	//Set all the pin numbers
-	setPins(ltr);
+	if (!setPins(ltr)) {
+		return false;
+	}
 
 	//Set the pin modes
 	if (gpioSetMode(ltr->leftAileron.pinNumber, PI_OUTPUT) != 0) {
@@ -71,6 +73,7 @@ int8_t setPins(Littleroot* ltr) {
 
 	//TODO: Figure out how to use fopen_s()
 	//Open file
+	//IF fopen fails:
 	if (fopen("../config.txt", "r") == NULL) {
 		printf("File I/O issue");
 		return false;
@@ -82,7 +85,6 @@ int8_t setPins(Littleroot* ltr) {
 		char* key = (char*)calloc(strlen(currentLine), sizeof(char));
 		int8_t value = 0;
 
-		//TODO: implement sscanf_s thing
 		//sscanf_s the values in the file into the above variables
 		sscanf_s(LINE_MAX, "%s %d", &key, &value);
 
