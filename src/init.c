@@ -10,7 +10,7 @@
 #include "littleroot.h"
 
 //Local prototypes
-void setPins(Littleroot*);
+int8_t setPins(Littleroot*);
 
 /*
 *	FUNCTION			: init
@@ -23,7 +23,7 @@ void setPins(Littleroot*);
 *	RETURNS				:
 *		int 			: Integer value representing a status code
 */
-int init(Littleroot* ltr) {
+int8_t init(Littleroot* ltr) {
 	//Initialize the GPIO library
 	if (gpioInitialise() < 0) {
 		printf("Failure at gpioInitialise()!");
@@ -34,17 +34,17 @@ int init(Littleroot* ltr) {
 	setPins(ltr);
 
 	//Set the pin modes
-	if (gpioSetMode(LEFT_AILERON_PIN, PI_OUTPUT) != 0) {
+	if (gpioSetMode(ltr->leftAileron.pinNumber, PI_OUTPUT) != 0) {
 		printf("Error at pin %d\n", LEFT_AILERON_PIN);
 		return false;
 	}
 
-	if (gpioSetMode(RIGHT_AILERON_PIN, PI_OUTPUT) != 0) {
+	if (gpioSetMode(ltr->rightAileron.pinNumber, PI_OUTPUT) != 0) {
 		printf("Error at pin %d\n", RIGHT_AILERON_PIN);
 		return false;
 	}
 
-	if (gpioSetMode(MOTOR_PIN, PI_OUTPUT) != 0) {
+	if (gpioSetMode(ltr->mainMotor.pinNumber, PI_OUTPUT) != 0) {
 		printf("Error at pin %d\n", MOTOR_PIN);
 		return false;
 	}
@@ -64,8 +64,36 @@ int init(Littleroot* ltr) {
 *	RETURNS				:
 *		void 			: void
 */
-void setPins(Littleroot* ltr) {
-	ltr->leftAileron.pinNumber = LEFT_AILERON_PIN;
-	ltr->rightAileron.pinNumber = RIGHT_AILERON_PIN;
-	ltr->mainMotor.pinNumber = MOTOR_PIN;
+int8_t setPins(Littleroot* ltr) {
+	//Set up file pointer and required variables
+	FILE* configFile = NULL;
+	char currentLine[LINE_MAX] = {0};
+
+	//TODO: Figure out how to use fopen_s()
+	//Open file
+	if (fopen("../config.txt", "r") == NULL) {
+		printf("File I/O issue");
+		return false;
+	}
+
+	//Get lines of text from the file
+	while (fgets(currentLine, LINE_MAX, configFile) != NULL) {
+		//Create temp variables
+		char* key = (char*)calloc(strlen(currentLine), sizeof(char));
+		int8_t value = 0;
+
+		//TODO: implement sscanf_s thing
+		//sscanf_s the values in the file into the above variables
+		sscanf_s(LINE_MAX, "%s %d", &key, &value);
+
+		//IF the text in the file matches a valid key:
+		//Set the object values accordingly
+		if (strcmp(key, "LEFT_AILERON_PIN") == 0) {
+			ltr->leftAileron.pinNumber = value;
+		} else if (strcmp(key, "RIGHT_AILERON_PIN") == 0) {
+			ltr->rightAileron.pinNumber = value;
+		} else if (strcmp(key, "MOTOR_AILERON_PIN") == 0) {
+			ltr->mainMotor.pinNumber = value;
+		}
+	}
 }

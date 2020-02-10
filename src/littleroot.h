@@ -12,11 +12,11 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 //Constants
-#define LEFT_AILERON_PIN 6
-#define RIGHT_AILERON_PIN 12
-#define MOTOR_PIN 21
+#define LINE_MAX 81
 
 #define GENERAL_ERROR_CODE -1
 
@@ -42,7 +42,7 @@ typedef struct Littleroot {
 } Littleroot;
 
 //Shared Prototypes
-int init(Littleroot*);
+int8_t init(Littleroot*);
 
 //Sub-Routines
 void turnRight(Littleroot*);
