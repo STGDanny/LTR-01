@@ -98,4 +98,7 @@ int8_t setPins(Littleroot* ltr) {
 			ltr->mainMotor.pinNumber = value;
 		}
 	}
+	//Close the file and return true
+	fclose(configFile);
+	return true;
 }
