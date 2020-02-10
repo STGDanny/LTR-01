@@ -83,10 +83,10 @@ int8_t setPins(Littleroot* ltr) {
 	while (fgets(currentLine, LINE_MAX, configFile) != NULL) {
 		//Create temp variables
 		char* key = (char*)calloc(strlen(currentLine), sizeof(char));
-		int8_t value = 0;
+		int value = 0;
 
 		//sscanf_s the values in the file into the above variables
-		sscanf_s(LINE_MAX, "%s %d", &key, &value);
+		sscanf(currentLine, "%s %d", key, &value);
 
 		//IF the text in the file matches a valid key:
 		//Set the object values accordingly
