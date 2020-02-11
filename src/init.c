@@ -70,11 +70,13 @@ int8_t setPins(Littleroot* ltr) {
 	//Set up file pointer and required variables
 	FILE* configFile = NULL;
 	char currentLine[LINE_MAX] = {0};
+	
+	configFile = fopen("../config.txt", "r");
 
 	//TODO: Figure out how to use fopen_s()
 	//Open file
 	//IF fopen fails:
-	if (fopen("../config.txt", "r") == NULL) {
+	if (configFile == NULL) {
 		printf("File I/O issue");
 		return false;
 	}
@@ -84,6 +86,11 @@ int8_t setPins(Littleroot* ltr) {
 		//Create temp variables
 		char* key = (char*)calloc(strlen(currentLine), sizeof(char));
 		int value = 0;
+
+		if (key == NULL) {
+			printf("Memory Allocation Error!");
+			return false;
+		}
 
 		//sscanf_s the values in the file into the above variables
 		sscanf(currentLine, "%s %d", key, &value);
