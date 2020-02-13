@@ -53,3 +53,4 @@ void goDown(Littleroot*);
 
 //Routines
 void cycleMotors(Littleroot*);
+void twitchEngine(Littleroot*);

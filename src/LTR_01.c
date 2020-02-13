@@ -20,8 +20,10 @@ int main(void) {
 		return GENERAL_ERROR_CODE;
 	}
 
-	//Test all motors
+	//Test all motors before running any further routines
 	cycleMotors(&ltr);
+
+	//Run routines below
 
 	//Kill the library and exit the program:
 	gpioTerminate();

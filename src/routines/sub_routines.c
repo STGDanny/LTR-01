@@ -111,3 +111,25 @@ void centre(Littleroot* ltr) {
 	//Wait to allow the servos to reach the desired destination
 	time_sleep(0.25);
 }
+
+/*
+*	FUNCTION			: twitchEngine
+*	DESCRIPTION			:
+*		This function takes a Littleroot object and moves it's engine to test
+*
+*	PARAMETERS			:
+*		Littleroot* ltr : Object to perform action upon
+*
+*	RETURNS				:
+*		void 			: void
+*/
+void twitchEngine(Littleroot* ltr) {
+	//Loop three times
+	for (int i = 0; i < 3; i++) {
+		//Power engine at 1 out of a possible 255
+		gpioPWM(ltr->mainMotor.pinNumber, 1);
+		time_sleep(0.25);
+		//Turn off motor
+		gpioPWM(ltr->mainMotor.pinNumber, 0);
+	}
+}

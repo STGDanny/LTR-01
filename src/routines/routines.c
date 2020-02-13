@@ -22,6 +22,7 @@
 *		void 			: void
 */
 void cycleMotors(Littleroot* ltr) {
+	twitchEngine(ltr);
 	centre(ltr);
 	turnRight(ltr);
 	turnLeft(ltr);

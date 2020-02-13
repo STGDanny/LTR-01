@@ -46,7 +46,7 @@ int8_t init(Littleroot* ltr) {
 		return false;
 	}
 
-	if (gpioSetMode(ltr->mainMotor.pinNumber, PI_OUTPUT) != 0) {
+	if (gpioSetMode(ltr->mainMotor.pinNumber, PI_ALT5) != 0) {
 		printf("Error at pin %d\n", ltr->mainMotor.pinNumber);
 		return false;
 	}
