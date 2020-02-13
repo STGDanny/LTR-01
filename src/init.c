@@ -96,12 +96,17 @@ int8_t setPins(Littleroot* ltr) {
 		//Set the object values accordingly
 		if (strcmp(key, "LEFT_AILERON_PIN") == 0) {
 			ltr->leftAileron.pinNumber = value;
+			free(key);
+			continue;
 		} else if (strcmp(key, "RIGHT_AILERON_PIN") == 0) {
 			ltr->rightAileron.pinNumber = value;
+			free(key);
+			continue;
 		} else if (strcmp(key, "MOTOR_AILERON_PIN") == 0) {
 			ltr->mainMotor.pinNumber = value;
+			free(key);
+			continue;
 		}
-		free(key);
 	}
 	//Close the file and return true
 	fclose(configFile);
