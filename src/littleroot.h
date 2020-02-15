@@ -20,9 +20,9 @@
 
 #define GENERAL_ERROR_CODE -1
 
-#define SERVO_MAX_CLOCKWISE 2500
-#define SERVO_MIDDLE 1500
-#define SERVO_MAX_COUNTER_CLOCKWISE 500
+#define SERVO_MAX_CLOCKWISE   2500
+#define SERVO_MIDDLE	      1500
+#define SERVO_MAX_C_CLOCKWISE 500
 
 //Data types
 typedef struct Motor {

@@ -24,7 +24,7 @@
 */
 void turnRight(Littleroot* ltr) {
 	//Send commands to the servos
-	gpioServo(ltr->rightAileron.pinNumber, SERVO_MAX_COUNTER_CLOCKWISE);
+	gpioServo(ltr->rightAileron.pinNumber, SERVO_MAX_C_CLOCKWISE);
 	gpioServo(ltr->leftAileron.pinNumber, SERVO_MAX_CLOCKWISE);
 
 	//Wait to allow the servos to reach the desired destination
@@ -46,7 +46,7 @@ void turnRight(Littleroot* ltr) {
 void turnLeft(Littleroot* ltr) {
 	//Send commands to the servos
 	gpioServo(ltr->rightAileron.pinNumber, SERVO_MAX_CLOCKWISE);
-	gpioServo(ltr->leftAileron.pinNumber, SERVO_MAX_COUNTER_CLOCKWISE);
+	gpioServo(ltr->leftAileron.pinNumber, SERVO_MAX_C_CLOCKWISE);
 
 	//Wait to allow the servos to reach the desired destination
 	time_sleep(1);
@@ -85,8 +85,8 @@ void goUp(Littleroot* ltr) {
 */
 void goDown(Littleroot* ltr) {
 	//Send commands to the servos
-	gpioServo(ltr->rightAileron.pinNumber, SERVO_MAX_COUNTER_CLOCKWISE);
-	gpioServo(ltr->leftAileron.pinNumber, SERVO_MAX_COUNTER_CLOCKWISE);
+	gpioServo(ltr->rightAileron.pinNumber, SERVO_MAX_C_CLOCKWISE);
+	gpioServo(ltr->leftAileron.pinNumber, SERVO_MAX_C_CLOCKWISE);
 
 	//Wait to allow the servos to reach the desired destination
 	time_sleep(1);

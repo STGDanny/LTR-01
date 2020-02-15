@@ -69,7 +69,7 @@ int8_t init(Littleroot* ltr) {
 int8_t setPins(Littleroot* ltr) {
 	//Set up file pointer and required variables
 	char currentLine[LINE_MAX] = {0};
-	FILE* configFile = fopen("../config.txt", "r");
+	FILE* configFile	   = fopen("../config.txt", "r");
 
 	//Open file
 	//IF fopen fails:
