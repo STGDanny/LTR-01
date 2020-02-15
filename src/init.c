@@ -68,8 +68,8 @@ int8_t init(Littleroot* ltr) {
 */
 int8_t setPins(Littleroot* ltr) {
 	//Set up file pointer and required variables
-	char currentLine[LINE_MAX] = {0};
-	FILE* configFile	   = fopen("../config.txt", "r");
+	char  currentLine[LINE_MAX] = {0};
+	FILE* configFile	    = fopen("../config.txt", "r");
 
 	//Open file
 	//IF fopen fails:
@@ -81,8 +81,8 @@ int8_t setPins(Littleroot* ltr) {
 	//Get lines of text from the file
 	while (fgets(currentLine, LINE_MAX, configFile) != NULL) {
 		//Create temp variables
-		char* key = (char*)calloc(strlen(currentLine), sizeof(char));
-		int value = 0;
+		char* key   = (char*)calloc(strlen(currentLine), sizeof(char));
+		int   value = 0;
 
 		if (key == NULL) {
 			printf("Memory Allocation Error!");

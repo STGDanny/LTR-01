@@ -30,7 +30,7 @@ typedef struct Motor {
 } Motor;
 
 typedef struct Aileron {
-	uint8_t pinNumber;
+	uint8_t	 pinNumber;
 	uint16_t maxValue;
 	uint16_t minValue;
 } Aileron;
@@ -38,7 +38,7 @@ typedef struct Aileron {
 typedef struct Littleroot {
 	Aileron leftAileron;
 	Aileron rightAileron;
-	Motor mainMotor;
+	Motor	mainMotor;
 } Littleroot;
 
 //Shared Prototypes
