@@ -27,4 +27,7 @@ void cycleMotors(Littleroot* ltr) {
 	turnRight(ltr);
 	turnLeft(ltr);
 	centre(ltr);
+	for (int i = 0; i < 5; i++) {
+		beepSpeaker(ltr);
+	}
 }

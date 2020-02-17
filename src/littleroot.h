@@ -39,6 +39,7 @@ typedef struct Littleroot {
 	Aileron leftAileron;
 	Aileron rightAileron;
 	Motor	mainMotor;
+	int8_t  speaker;
 } Littleroot;
 
 //Shared Prototypes
@@ -50,6 +51,7 @@ void turnLeft(Littleroot*);
 void centre(Littleroot*);
 void goUp(Littleroot*);
 void goDown(Littleroot*);
+void beepSpeaker(Littleroot*);
 
 //Routines
 void cycleMotors(Littleroot*);

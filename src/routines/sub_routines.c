@@ -133,3 +133,9 @@ void twitchEngine(Littleroot* ltr) {
 		gpioPWM(ltr->mainMotor.pinNumber, 0);
 	}
 }
+
+void beepSpeaker(Littleroot* ltr) {
+	gpioWrite(ltr->speaker, 1);
+	time_sleep(0.1);
+	gpioWrite(ltr->speaker, 0);
+}
