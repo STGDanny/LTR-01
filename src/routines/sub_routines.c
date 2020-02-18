@@ -147,8 +147,8 @@ void twitchEngine(Littleroot* ltr) {
 */
 void beepSpeaker(Littleroot* ltr) {
 	//Turn speaker on
-	gpioWrite(ltr->speaker, 1);
+	gpioWrite(ltr->buzzer.pinNumber, 1);
 	time_sleep(0.1);
 	//Speaker off
-	gpioWrite(ltr->speaker, 0);
+	gpioWrite(ltr->buzzer.pinNumber, 0);
 }

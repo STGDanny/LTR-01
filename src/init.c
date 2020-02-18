@@ -50,8 +50,8 @@ int8_t init(Littleroot* ltr) {
 		printf("Error at pin %d\n", ltr->mainMotor.pinNumber);
 		return false;
 	}
-	if (gpioSetMode(ltr->speaker, PI_OUTPUT) != 0) {
-		printf("Error at pin %d\n", ltr->speaker);
+	if (gpioSetMode(ltr->buzzer.pinNumber, PI_OUTPUT) != 0) {
+		printf("Error at pin %d\n", ltr->buzzer.pinNumber);
 		return false;
 	}
 
@@ -111,7 +111,7 @@ int8_t setPins(Littleroot* ltr) {
 			free(key);
 			continue;
 		} else if (strcmp(key, "SPEAKER_PIN") == 0) {
-			ltr->speaker = value;
+			ltr->buzzer.pinNumber = value;
 			free(key);
 			continue;
 		}

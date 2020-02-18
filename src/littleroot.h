@@ -24,12 +24,17 @@
 #define SERVO_MIDDLE	      1500
 #define SERVO_MAX_C_CLOCKWISE 500
 
-//Data types
+//Data Structures
 typedef struct Motor {
 	uint8_t	 pinNumber;
 	uint16_t maxValue;
 	uint16_t minValue;
 } Motor;
+
+//Struct for the BMP-180 board
+typedef struct BMP {
+	uint8_t pinNumber;
+} BMP;
 
 typedef struct Aileron {
 	uint8_t	 pinNumber;
@@ -37,11 +42,16 @@ typedef struct Aileron {
 	uint16_t minValue;
 } Aileron;
 
+typedef struct Buzzer {
+	uint8_t pinNumber;
+} Buzzer;
+
 typedef struct Littleroot {
 	Aileron leftAileron;
 	Aileron rightAileron;
 	Motor	mainMotor;
-	int8_t	speaker;
+	Buzzer	buzzer;
+	BMP	bmp;
 } Littleroot;
 
 //Shared Prototypes
