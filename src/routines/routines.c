@@ -21,13 +21,15 @@
 *	RETURNS				:
 *		void 			: void
 */
-void cycleMotors(Littleroot* ltr) {
+void systemTest(Littleroot* ltr) {
 	twitchEngine(ltr);
 	centre(ltr);
 	turnRight(ltr);
 	turnLeft(ltr);
 	centre(ltr);
+	//For 5 cycles:
 	for (int i = 0; i < 5; i++) {
+		//Turn on the buzzer
 		beepSpeaker(ltr);
 	}
 }

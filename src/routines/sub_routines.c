@@ -134,8 +134,21 @@ void twitchEngine(Littleroot* ltr) {
 	}
 }
 
+/*
+*	FUNCTION			: beepSpeaker
+*	DESCRIPTION			:
+*		This function takes a Littleroot object and buzzes it's speaker
+*
+*	PARAMETERS			:
+*		Littleroot* ltr : Object to perform action upon
+*
+*	RETURNS				:
+*		void 			: void
+*/
 void beepSpeaker(Littleroot* ltr) {
+	//Turn speaker on
 	gpioWrite(ltr->speaker, 1);
 	time_sleep(0.1);
+	//Speaker off
 	gpioWrite(ltr->speaker, 0);
 }

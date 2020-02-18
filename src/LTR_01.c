@@ -21,7 +21,7 @@ int main(void) {
 	}
 
 	//Test all motors before running any further routines
-	cycleMotors(&ltr);
+	systemTest(&ltr);
 
 	//Run routines below
 
