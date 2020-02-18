@@ -26,7 +26,9 @@
 
 //Data types
 typedef struct Motor {
-	uint8_t pinNumber;
+	uint8_t	 pinNumber;
+	uint16_t maxValue;
+	uint16_t minValue;
 } Motor;
 
 typedef struct Aileron {
